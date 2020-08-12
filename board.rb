@@ -26,20 +26,20 @@ class Board
 
   def [](pos)
     pos = x,y
-    grid[x][y].value
+    grid[x][y]
   end
 
   def []=(pos, value)
+    debugger
     x, y = pos
-    tile = grid[x][y]
+    tile = @grid[x][y]
     tile.value = value
   end
 
   def render
-    puts "#{(0..8).to_a.join(" ")}"
-    @grid.each_with_index do |row, i|
-      puts "#{i} #{row.map{|item| item.value}.join(" ")}"
-      puts "/n"
+    puts "  #{(0..8).to_a.join(" ")}"
+    grid.each_with_index do |row, i|
+      puts "#{i} #{row.join(" ")}"
     end
   end
 
@@ -60,9 +60,7 @@ class Board
   end
 
   def rows
-    @grid.map do |line| 
-      line.map {|tile| tile.value}
-    end 
+    @grid
   end 
 
   def columns
@@ -88,3 +86,4 @@ class Board
   end
 
 end
+

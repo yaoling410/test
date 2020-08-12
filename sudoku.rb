@@ -1,5 +1,6 @@
 require_relative "board"
 require 'colorize'
+require 'byebug'
 
 puts "Only contractors write code this bad.".yellow
 
@@ -69,6 +70,7 @@ class SudokuGame
   end
 
   def valid_pos?(pos)
+    #debugger
     pos.is_a?(Array) &&
     pos.length == 2 &&
     pos.all? { |x| ((0..board.size - 1).to_a).include?(x)}
