@@ -64,6 +64,7 @@ class SudokuGame
   end
 
   def board_process_terminates?
+    board.render 
     board.terminate?
   end
 
