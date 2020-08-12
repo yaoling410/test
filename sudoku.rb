@@ -51,8 +51,7 @@ class SudokuGame
 
     val = get_val
     pos = get_pos
-
-    board[pos] = val
+    board[val] = pos
   end
 
   def run
